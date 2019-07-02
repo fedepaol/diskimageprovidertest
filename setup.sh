@@ -38,7 +38,7 @@ function finish {
 trap finish EXIT
 
 # Create the cluster...
-~/go/bin/kind --loglevel debug create cluster --wait=$((60*60))s --retain --name=${CLUSTER_NAME} --config=./diskimageprovidersample/kind.yaml --image=onesourceintegrations/node:multus
+~/go/bin/kind --loglevel debug create cluster --wait=$((60*60))s --retain --name=${CLUSTER_NAME} --config=./diskimageprovidertest/kind.yaml --image=onesourceintegrations/node:multus
 
 export KUBECONFIG=$(~/go/bin/kind get kubeconfig-path --name=${CLUSTER_NAME})
 
